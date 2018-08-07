@@ -2,4 +2,18 @@
 <resources>
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <dimen name="cardCornerRadius">8dp</dimen>
+
+    <dimen name="imageView_layout_height">200dp</dimen>
+
+    <dimen name="linear_layout_margin_left">10dp</dimen>
+    <dimen name="linear_layout_margin_start">10dp</dimen>
+
+    <dimen name="card_label_text_size">30sp</dimen>
+
+    <dimen name="card_tv_layout_margin_left">20dp</dimen>
+    <dimen name="card_tv_layout_margin_start">20dp</dimen>
+
+    <dimen name="card_tv_text_size">18sp</dimen>
 </resources>

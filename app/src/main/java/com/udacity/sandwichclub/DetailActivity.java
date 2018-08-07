@@ -15,20 +15,26 @@ import org.json.JSONException;
 
 import java.util.List;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class DetailActivity extends AppCompatActivity {
 
     public static final String EXTRA_POSITION = "extra_position";
     private static final int DEFAULT_POSITION = -1;
 
-    private ImageView ingredientsIv;
-    private TextView alsoKnownTv, description, ingredientsTv, originTv;
+    @BindView(R.id.image_iv) ImageView ingredientsIv;
+    @BindView(R.id.also_known_tv) TextView alsoKnownTv;
+    @BindView(R.id.description_tv) TextView description;
+    @BindView(R.id.ingredients_tv) TextView ingredientsTv;
+    @BindView(R.id.origin_tv) TextView originTv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
 
-        initView();
+        ButterKnife.bind(this);
 
         Intent intent = getIntent();
         if (intent == null) {
@@ -82,16 +88,11 @@ public class DetailActivity extends AppCompatActivity {
 
         Picasso.with(this)
                 .load(sandwich.getImage())
+                .placeholder(R.mipmap.ic_launcher)
+                .error(R.mipmap.ic_launcher)
                 .into(ingredientsIv);
 
-        setTitle(sandwich.getMainName());
-    }
 
-    private void initView() {
-        ingredientsIv = findViewById(R.id.image_iv);
-        alsoKnownTv = findViewById(R.id.also_known_tv);
-        description = findViewById(R.id.description_tv);
-        ingredientsTv = findViewById(R.id.ingredients_tv);
-        originTv = findViewById(R.id.origin_tv);
+        setTitle(sandwich.getMainName());
     }
 }
